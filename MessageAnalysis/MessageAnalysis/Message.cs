@@ -7,8 +7,17 @@ using System.Text.RegularExpressions;
 
 namespace MessageAnalysis
 {
+	/// <summary>
+	/// клас для анализа кол-ва вхождений
+	/// </summary>
 	static class Message
 	{
+		/// <summary>
+		/// возвращает словарь вхождений
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="t"></param>
+		/// <returns></returns>
 		public static Dictionary<string, int> Analys(String[] s, string t)
 		{
 			Dictionary<string, int> dList = new Dictionary<string, int>();
