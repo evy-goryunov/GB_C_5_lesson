@@ -22,6 +22,7 @@ namespace MessageAnalysis
 		{
 
 			String[] sArray = { "куртку", "меч", "не", "дверь", "налоговая" };
+			//String[] sArray = { "мот", "пар", "ключ", "дверь", "налоговая" };
 			string text = "Трактирщик вытер руки полотняным фартуком и наполнил щербатую глиняную кружку. Незнакомец не " +
 						  "был стар, но волосы у него были почти совершенно белыми.Под плащом он носил потертую " +
 						  "кожаную куртку со шнуровкой у горла и на рукавах. " +
@@ -29,22 +30,12 @@ namespace MessageAnalysis
 						  "Ничего странного в этом не было, в Вызиме почти все ходили с оружием, правда, " +
 						  "никто не носил меч на спине, словно лук или колчан.";
 
-			//public Dictionary<int, int> CountOfValue()
-			//{
-			//	for (int i = 0; i < arr.Length; i++)
-			//	{
-			//		if (dList.TryGetValue(arr[i], out int a))
-			//		{
-			//			dList[arr[i]] = ++a;
-			//		}
-			//		else
-			//		{
-			//			dList.Add(arr[i], 1);
-			//		}
-			//	}
-			//}
-
-
+			Dictionary<string, int> dl = new Dictionary<string, int>();
+			dl = Message.Analys(sArray, text);
+			foreach(KeyValuePair<string,int> keyValue in dl)
+			{
+				Console.WriteLine(keyValue.Key + " - " + keyValue.Value);
+			}
 		}
 	}
 }
